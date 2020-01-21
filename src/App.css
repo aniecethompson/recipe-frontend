@@ -1,5 +1,5 @@
 .header{
-  height: 81vh;
+  height: 60vh;
   /* background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5), url("./back-1.jpg")); */
   background-size: cover;
   background-position: center;
@@ -32,7 +32,7 @@ h1{
 }
 
 .search-btn:hover{
-  background: #B3A4CA;
+  background: #9171bf;
   cursor: pointer;
 }
 
@@ -107,7 +107,7 @@ html {
 a {
 padding: 0 25px 0 25px;
 text-decoration: none;
-color: #B3A4CA;
+color: #9171bf;
 
 }
 
@@ -118,16 +118,23 @@ color: #B3A4CA;
   margin-left: 20px;
 }
 
+.card-container {
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 1rem;
+}
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  display: inline-block;
+  background: #D3C2EB;
 }
 .center{
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+  margin: auto;
+  margin-top: 35px;
+  width: 50%
 }
 
 .card:hover {
@@ -135,9 +142,30 @@ color: #B3A4CA;
 }
 
 .container {
-  padding: 2px 16px;
+  padding: 0px 40px;
 }
 
+.get-recipes-btn{
+  height: 3em;
+  width: 7em;
+  background: #D3C2EB;
+  border: none;
+  color: #AF1B3F;
+  border-radius: 25px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 3em;
+}
+
+.get-recipes-btn:hover{
+  background: #9171bf;
+  cursor: pointer;
+}
+
+.random{
+  text-align: center;
+  padding: 55px;
+  margin: 75px;
+}
 
  
 

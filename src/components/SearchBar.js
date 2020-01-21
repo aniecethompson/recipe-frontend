@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 import RecipeCard from './RecipeCard';
-
 let API_KEY = process.env.REACT_APP_API_KEY
+
 class SearchBar extends Component {
     state = {
         searchInput: "",
@@ -36,8 +36,8 @@ class SearchBar extends Component {
 
     render() {
        return (
-           
-           <div className="header">
+        <React.Fragment>
+              <div className="header">
                <form className= "search-form" onSubmit={this.onSubmit}>
                    <h1>Search By Ingredient</h1> 
                    <div className= "form-box">
@@ -45,9 +45,11 @@ class SearchBar extends Component {
                    <input className= "search-btn" type="submit"/>
                    </div>
                </form>
-               {this.state.data.map(data => (<RecipeCard key={data.id} recipe={data}/>))}
-           </div>
+             </div>
+             <div className="card-container">{this.state.data.map(data => (<RecipeCard key={data.id} recipe={data}/>))}</div>
+        </React.Fragment>
        )};
+
        }
 
 

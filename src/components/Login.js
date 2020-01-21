@@ -36,7 +36,7 @@ const Login = ()=> {
                   <div>
                     Username:<input onChange={handleChange} value={username}type="text" name= "username"/>
                     Email:<input onChange={handleChange} value={email} type="text" name= "email"/>
-                    <input type="submit"/>
+                    <input className= "search-btn"type="submit"/> 
                     </div>
                 </form>
             </div>

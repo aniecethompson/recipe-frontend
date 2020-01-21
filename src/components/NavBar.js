@@ -11,9 +11,10 @@ class NavBar extends Component {
                   <img src={source} alt="fuck me"/>
                  <ul className="nav-ul">
                     <li><NavLink className="nav-links" to="/login" exact activeStyle={ {background:"#AF1B3F"} }>Login</NavLink></li>
-                    <li><NavLink className="nav-links" to="/signup" exact activeStyle={ {background:"#AF1B3F"} }>Signup</NavLink></li>
-                    <li><NavLink className="nav-links" to="/update_account" exact activeStyle={ {background:"#AF1B3F"} }>Update Account</NavLink></li>
+                    {/* <li><NavLink className="nav-links" to="/signup" exact activeStyle={ {background:"#AF1B3F"} }>Signup</NavLink></li>
+                    <li><NavLink className="nav-links" to="/update_account" exact activeStyle={ {background:"#AF1B3F"} }>Update Account</NavLink></li> */}
                     <li><NavLink className="nav-links" to="/search" exact activeStyle={ {background:"#AF1B3F"} } >Search</NavLink></li>
+                    <li><NavLink className="nav-links" to="/" exact activeStyle={ {background:"#AF1B3F"} }>Recipes</NavLink></li>
                   </ul>
             </nav>
             </div>
