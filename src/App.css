@@ -170,6 +170,14 @@ color: #AF1B3F;
   background: whitesmoke;
 }
 
+.recipe-pic{
+  display: block;
+  margin: auto;
+  margin-top: 35px;
+  width: 50%
+
+}
+
  
 
 
