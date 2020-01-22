@@ -107,14 +107,13 @@ html {
 a {
 padding: 0 25px 0 25px;
 text-decoration: none;
-color: #9171bf;
-
+color: #AF1B3F;
 }
 
-.logo {
-  display: inline-block;
-  font-size: 22px;
-  margin-top: 10px;
+.nav-logo {
+  /* display: inline-block; */
+  float: left !important;
+  margin-top: -15px !important;
   margin-left: 20px;
 }
 
@@ -165,6 +164,10 @@ color: #9171bf;
   text-align: center;
   padding: 55px;
   margin: 75px;
+}
+
+.full-container{
+  background: whitesmoke;
 }
 
  

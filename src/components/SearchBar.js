@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import RecipeCard from './RecipeCard';
-let API_KEY = process.env.REACT_APP_API_KEY
+let API_KEY = process.env.REACT_APP_API_KEY_TWO
 
 class SearchBar extends Component {
     state = {
@@ -13,6 +13,8 @@ class SearchBar extends Component {
           searchInput: event.target.value
         })
       }
+
+      
     
     onSubmit = (event) => {
         event.preventDefault()
@@ -20,8 +22,8 @@ class SearchBar extends Component {
         // console.log(this.props.newMessage)
         // this.setState({ ...defaultState })
         // console.log(this.state.searchInput)
-        
-        fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${this.state.searchInput}&number=10&apiKey=${API_KEY}`)
+        // console.log(API_KEY)
+        fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${this.state.searchInput}&number=12&apiKey=${API_KEY}`)
         .then(resp => resp.json())
         // .then(json_resp => console.log(json_resp))
         .then((resp) => {
@@ -32,8 +34,6 @@ class SearchBar extends Component {
         
     }
         
-   
-
     render() {
        return (
         <React.Fragment>
@@ -51,7 +51,5 @@ class SearchBar extends Component {
        )};
 
        }
-
-
 
 export default SearchBar;

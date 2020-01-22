@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import RecipeCard from './RecipeCard';
-let API_KEY = process.env.REACT_APP_API_KEY
+let API_KEY = process.env.REACT_APP_API_KEY_TWO;
 
 class RandomRecipe extends Component {
 
@@ -20,6 +20,7 @@ class RandomRecipe extends Component {
             
         
     render() {
+        // console.log(this.state.random)
         const getRecipes = this.state.random.map(recipe => 
             <RecipeCard key={recipe.id} recipe={recipe}/>)
         return (

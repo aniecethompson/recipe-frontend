@@ -5,6 +5,7 @@ import SearchBar from './components/SearchBar';
 import RandomRecipe from './components/RandomRecipe';
 import NavBar from './components/NavBar'
 import { BrowserRouter as Router, Route} from "react-router-dom";
+import FullRecipe from './components/FullRecipe';
 
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
     <div className="App">
       <NavBar />
         <Route path="/" exact component={RandomRecipe}/>
+        <Route path="/full-recipe" exact component={FullRecipe}/>
         <Route path="/signup" exact component={Login}/>
         <Route path="/login" exact component={Login}/>
         <Route path="/update_account" exact component={Login}/>
