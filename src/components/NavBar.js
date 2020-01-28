@@ -11,9 +11,9 @@ class NavBar extends Component {
               <nav className="nav-wrapper">
                  <ul className="nav-ul">
                     <img src={logo} height="150px;" alt="logo" className= "logo"/>
-                    <li><NavLink className="nav-links" to="/login" exact activeStyle={ {background:"#9171bf"} }>Login</NavLink></li>
-                    {/* <li><NavLink className="nav-links" to="/signup" exact activeStyle={ {background:"#AF1B3F"} }>Signup</NavLink></li>
-                    <li><NavLink className="nav-links" to="/update_account" exact activeStyle={ {background:"#AF1B3F"} }>Update Account</NavLink></li> */}
+                    {/* <li><NavLink className="nav-links" to="/login" exact activeStyle={ {background:"#9171bf"} }>Login</NavLink></li> */}
+                    <li><NavLink className="nav-links" to="/signup" exact activeStyle={ {background:"#9171bf"} }>Signup</NavLink></li>
+                    <li><NavLink className="nav-links" to="/cookbook" exact activeStyle={ {background:"#9171bf"} }>My Cookbook</NavLink></li>
                     <li><NavLink className="nav-links" to="/search" exact activeStyle={ {background:"#9171bf"} } >Search</NavLink></li>
                     <li><NavLink className="nav-links" to="/" exact activeStyle={ {background:"#9171bf"} }>Recipes</NavLink></li>
                   </ul>

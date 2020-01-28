@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import RecipeCard from './RecipeCard';
-let API_KEY = process.env.REACT_APP_API_KEY_1
+let API_KEY = process.env.REACT_APP_API_KEY_TWO
 
 class SearchBar extends Component {
     state = {
@@ -28,6 +28,7 @@ class SearchBar extends Component {
         // .then(json_resp => console.log(json_resp))
         .then((resp) => {
             this.setState({
+                searchInput: "",
                 data: resp
             })
         })

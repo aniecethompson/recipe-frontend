@@ -1,17 +1,21 @@
-import React, { useState} from 'react';
+import React, { Component} from 'react';
+import {withRouter} from "react-router";
 
-const Login = ()=> {
-    const [loginForm, setLoginForm] = useState({
-        username: '',
-        email: ''
-      });
-   
-    const { username, email } = loginForm;
+class Login extends Component {
+    state = {
+      username: '',
+      email: ''
+    }
+
+   onChange = (event) => {
+      // console.log(event.target.name, event.target.value)
+      this.setState({
+        [event.target.name]: event.target.value 
+      })
+    }
+
     
-    const handleChange = e =>
-    setLoginForm({ ...loginForm, [e.target.name]: e.target.value });
-    
-    const handleSubmit = (evt) =>{
+    handleSubmit = (evt) =>{
         evt.preventDefault()
         fetch(`http://localhost:3001/users`, {
           method:'POST',
@@ -20,27 +24,33 @@ const Login = ()=> {
              'accept': 'application/json'
           },
           body: JSON.stringify({
-            username: username,
-            email: email
+            username: this.state.username,
+            email: this.state.email
           })
         })
         .then(resp => resp.json())
-        .then(json_resp => console.log(json_resp))
+        .then(() => {
+          this.setState({
+            username: '',
+            email: ''
+          })
+        })
+        this.props.history.push({ pathname: '/'})
       }
-
+      render() {
         return (
             
             <div className="header">
-                <form className="search-form" onSubmit={handleSubmit}>
+                <form className="search-form" onSubmit={this.handleSubmit}>
                   <h1>Login</h1> 
                   <div>
-                    Username:<input onChange={handleChange} value={username}type="text" name= "username"/>
-                    Email:<input onChange={handleChange} value={email} type="text" name= "email"/>
+                    Username:<input onChange={this.onChange} value={this.state.username}type="text" name= "username"/>
+                    Email:<input onChange={this.onChange} value={this.state.email} type="text" name= "email"/>
                     <input className= "search-btn"type="submit"/> 
                     </div>
                 </form>
             </div>
         );
-    
+     }
 }
-export default Login;
+export default withRouter(Login);

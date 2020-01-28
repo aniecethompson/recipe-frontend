@@ -133,7 +133,8 @@ color: #AF1B3F;
   display: block;
   margin: auto;
   margin-top: 35px;
-  width: 50%
+  margin-bottom: 15px;
+  width: 50%;
 }
 
 .card:hover {
@@ -167,16 +168,71 @@ color: #AF1B3F;
 }
 
 .full-container{
-  background: whitesmoke;
+  background: #D3C2EB;
+  padding: 25px;
+  margin: 100px
 }
 
 .recipe-pic{
   display: block;
   margin: auto;
-  margin-top: 35px;
-  width: 50%
-
+  margin-top: 65px;
+  width: 60%;
 }
+
+.full-recipe-title{
+  font-size: 3em;
+}
+
+.full-recipe-p{
+  display: inline-flex;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.full-recipe-ul{
+  font-size: 18px;
+  font-weight: bold;
+  color: #AF1B3F;
+}
+
+.full-recipe-li{
+  color: black;
+  list-style-type: none;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 8px;
+  margin: 3px;
+  display: inline-flex;
+}
+
+.remove-btn{
+  height: 3em;
+  width: 7em;
+  background: #9171bf;
+  border: none;
+  color: #AF1B3F;
+  border-radius: 25px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2em;
+  margin: auto;
+}
+
+.add-btn{
+  height: 2em;
+  width: 7em;
+  background: #9171bf;
+  border: none;
+  color: #AF1B3F;
+  border-radius: 25px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2em;
+  margin: auto;
+}
+
+
+
 
  
 
