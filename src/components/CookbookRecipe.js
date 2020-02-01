@@ -32,9 +32,9 @@ class CookbookRecipe extends Component {
             this.setState({
                 CookbookRecipes: newArray
             })
-        }
-            )
+        })
     }
+
 
     renderRecipes = () => {
         return this.state.CookbookRecipes.map(recipe => 
@@ -43,7 +43,7 @@ class CookbookRecipe extends Component {
                 <div className= "container">
                   <h2 className="center">{recipe.title}</h2>
                 </div>
-                <button className="remove-btn center"  onClick={()=> this.removeRecipe(recipe)}>Remove From Cookbook</button>
+                <button className="add-btn center" style={ {height: "3em"}} onClick={()=> this.removeRecipe(recipe)}>Remove From Cookbook</button>
             </div>
           
         )
@@ -51,16 +51,11 @@ class CookbookRecipe extends Component {
 
     render() {
         return (
-            <div className="card-container">
-                {this.renderRecipes()}
-                {/* <div className="card">
-                <img className="center" src={this.props.recipe.image} alt={this.props.recipe.title}/>
-                    <div className= "container">
-                      <h2>{this.props.recipe.title}</h2>
-                    </div>
+            <div className="random">
+                <h1>CookBook</h1>
+                <div className="card-container">
+                    {this.renderRecipes()}
                 </div>
-             <button onClick={this.handleAddRecipeToCookbook}>Remove From Cookbook</button>  */}
-            
             </div>
         );
     }

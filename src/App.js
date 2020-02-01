@@ -1,6 +1,5 @@
 import React , {Component} from 'react';
 import './App.css';
-import Login from './components/Login';
 import SearchBar from './components/SearchBar';
 import RandomRecipe from './components/RandomRecipe';
 import NavBar from './components/NavBar'
@@ -19,8 +18,6 @@ class App extends Component {
       <NavBar />
         <Route path="/" exact component={RandomRecipe}/>
         <Route path="/full-recipe" exact component={FullRecipe}/>
-        <Route path="/signup" exact component={Login}/>
-        {/* <Route path="/login" exact component={Login}/> */}
         <Route path="/cookbook" exact component={CookbookRecipe}/>
         <Route path="/search"  component={SearchBar}/>
     </div>

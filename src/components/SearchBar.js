@@ -47,7 +47,9 @@ class SearchBar extends Component {
                    </div>
                </form>
              </div>
+             <div className="random">
              <div className="card-container">{this.state.data.map(data => (<RecipeCard key={data.id} recipe={data}/>))}</div>
+             </div>
         </React.Fragment>
        )};
 

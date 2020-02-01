@@ -63,7 +63,7 @@ class RecipeCard extends Component {
                       <h2>{this.props.recipe.title}</h2>
                     </div>
                 </div>
-             <button className="add-btn" onClick={this.handleAddRecipeToCookbook}>Add To Cookbook</button>
+             <button className="add-btn center" onClick={this.handleAddRecipeToCookbook}>Add To Cookbook</button>
              </div>
         );
     }

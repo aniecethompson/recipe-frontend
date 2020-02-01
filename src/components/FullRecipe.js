@@ -52,10 +52,7 @@ class FullRecipe extends Component {
                         <ul className="full-recipe-ul">Cuisines: {cuisines.map((cuisine, index) => <li className="full-recipe-li" key={index} >{cuisine}</li>)}</ul>
                         <ul className="full-recipe-ul">Type of Diet: {diets.map((diet, index) => <li className="full-recipe-li" key={index} >{diet}</li>)}</ul>
                         <ul className="full-recipe-ul">Ingredients: {extendedIngredients.map((ingredient, index) =>{
-                          return  <div className="ingredient-card">
-                            {/* <img key={ingredient.id} className="recipe-pic" src={ingredient.image} alt={ingredient.name}/> */}
-                            <li className="full-recipe-li" key={index} >{ingredient.name}</li>
-                            </div>
+                          return   <li className="full-recipe-li" key={index} >{ingredient.name}</li>
                         } )}</ul>
 
                         <ul className="full-recipe-ul">Directions: {analyzedInstructions.map((instruction, index) =>{
@@ -69,9 +66,10 @@ class FullRecipe extends Component {
                         } )}</ul>
 
                     </div>
-                    <ol>
+                    <h1>Similar Recipes</h1>
+                    <div className="card-container">
                     {getSimilarRecipes}
-                    </ol>
+                    </div>
                 </div> 
             </div>
         );
