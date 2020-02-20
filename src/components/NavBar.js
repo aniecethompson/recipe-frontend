@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '/Users/flatironbrooklyn/Desktop/Recipe App/recipe/src/logo.png';
+// import logo from 'recipe/src/logo.png';
 
 
 class NavBar extends Component {
@@ -9,7 +9,7 @@ class NavBar extends Component {
         return (
               <nav className="nav-wrapper">
                  <ul className="nav-ul">
-                     <li className="push"><img src={logo} height="135px;" alt="logo" className= "logo"/></li>
+                     {/* <li className="push"><img src={logo} height="135px;" alt="logo" className= "logo"/></li> */}
                     <li><NavLink className="nav-links" to="/cookbook" exact activeStyle={ {background:"#9171bf"} }>My Cookbook</NavLink></li>
                     <li><NavLink className="nav-links" to="/search" exact activeStyle={ {background:"#9171bf"} } >Search</NavLink></li>
                     <li><NavLink className="nav-links" to="/" exact activeStyle={ {background:"#9171bf"} }>Recipes</NavLink></li>
