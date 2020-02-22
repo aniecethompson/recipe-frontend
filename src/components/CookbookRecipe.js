@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import RecipeCard from './RecipeCard';
 
 class CookbookRecipe extends Component {
 
@@ -38,14 +39,7 @@ class CookbookRecipe extends Component {
 
     renderRecipes = () => {
         return this.state.CookbookRecipes.map(recipe => 
-            <div className="card">
-            <img className="center" src={recipe.image} alt={recipe.title}/>
-                <div className= "container">
-                  <h2 className="center">{recipe.title}</h2>
-                </div>
-                <button className="add-btn center" style={ {height: "3em"}} onClick={()=> this.removeRecipe(recipe)}>Remove From Cookbook</button>
-            </div>
-          
+            <RecipeCard recipe={recipe}/>    
         )
     }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import RecipeCard from './RecipeCard';
-let API_KEY = process.env.REACT_APP_API_KEY_TWO;
+let API_KEY = process.env.REACT_APP_API_KEY_1;
 
 
 class FullRecipe extends Component {
@@ -31,6 +31,31 @@ class FullRecipe extends Component {
 
     }
 
+       handleAddRecipeToCookbook = () => {
+        //   let recipeId = this.props.history.location.state.recipeId
+        // fetch(`http://localhost:3001/recipes`, {
+        //   method:'POST',
+        //  headers: { 
+        //      'Content-type': 'application/json',
+        //      'accept': 'application/json'
+        //  },
+        //  body: JSON.stringify({
+        // cookbook_id: 1,
+        // title: recipe.title,
+        // image: recipe.image 
+        //   })
+        // })
+        // .then(resp => resp.json())
+        // .then(newR => {
+        //     let recipes = [...this.state.userRecipes, newR]
+        //     this.setState({
+        //         userRecipes: recipes 
+        //     })
+            
+        // })
+        console.log(this.props.history.location.state.recipeId)
+    }
+
     render() {
         const getSimilarRecipes = this.state.similarRecipes.map(recipe => 
              <RecipeCard key={recipe.id} recipe={recipe}/>)
@@ -47,10 +72,10 @@ class FullRecipe extends Component {
                         <p className="full-recipe-p" style={ {color:"#AF1B3F"} }>Cook Time: {cookingMinutes} minutes</p>
                         <p className="full-recipe-p">Ready in {readyInMinutes} minutes</p>
                         <p className="full-recipe-p" style={ {color:"#AF1B3F"} }>Serves {servings} people</p>
-                        {/* {console.log(this.state.recipeInfo.dishTypes)} */}
                         <ul className="full-recipe-ul" >Dish Type: {dishTypes.map((dish, index) => <li className="full-recipe-li" key={index} >{dish}</li>)}</ul>
                         <ul className="full-recipe-ul">Cuisines: {cuisines.map((cuisine, index) => <li className="full-recipe-li" key={index} >{cuisine}</li>)}</ul>
                         <ul className="full-recipe-ul">Type of Diet: {diets.map((diet, index) => <li className="full-recipe-li" key={index} >{diet}</li>)}</ul>
+                        
                         <ul className="full-recipe-ul">Ingredients: {extendedIngredients.map((ingredient, index) =>{
                           return   <li className="full-recipe-li" key={index} >{ingredient.name}</li>
                         } )}</ul>
@@ -58,18 +83,25 @@ class FullRecipe extends Component {
                         <ul className="full-recipe-ul">Directions: {analyzedInstructions.map((instruction, index) =>{
                           return instruction.steps.map((step) => {
                               return <div className="directions">
-                                  {/* <img key={step.id} className="recipe-pic" src={step.image} alt={ingredient.name}/> */}
                                   <li className="full-recipe-li" key={index} >Step: {step.number} - {step.step}</li>
                                   </div>
                           })
                           
                         } )}</ul>
 
-                    </div>
-                    <h1>Similar Recipes</h1>
+                        <div>
+                            <button className="add-btn center" onClick={() => this.handleAddRecipeToCookbook()}>Add To Cookbook</button>
+                        </div>
+           
+                    {/* <h1>Similar Recipes</h1>
                     <div className="card-container">
                     {getSimilarRecipes}
+                    </div> */}
+
                     </div>
+                    
+
+                    
                 </div> 
             </div>
         );
