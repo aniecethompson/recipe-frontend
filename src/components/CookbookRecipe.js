@@ -4,7 +4,6 @@ import RecipeCard from './RecipeCard';
 class CookbookRecipe extends Component {
 
     state = {
-
         CookbookRecipes: []
     }
     
@@ -20,7 +19,7 @@ class CookbookRecipe extends Component {
     }
 
     removeRecipe = (recipe) => {
-        // console.log(recipe.id)
+        console.log(recipe.id)
         fetch(`http://localhost:3001/recipes/${recipe.id}`, {
           method:'DELETE',
         })
@@ -38,8 +37,12 @@ class CookbookRecipe extends Component {
 
 
     renderRecipes = () => {
-        return this.state.CookbookRecipes.map(recipe => 
-            <RecipeCard recipe={recipe}/>    
+        return this.state.CookbookRecipes.map(recipe =>
+            console.log(recipe)
+            // fetch(`url`)
+            // .then(resp => resp.json())
+            // .then(json_resp => console.log(json_resp)) 
+            // <RecipeCard key={recipe.id} recipe={recipe}/>    
         )
     }
 

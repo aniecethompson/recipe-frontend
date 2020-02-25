@@ -32,29 +32,26 @@ class FullRecipe extends Component {
     }
 
        handleAddRecipeToCookbook = () => {
-        //   let recipeId = this.props.history.location.state.recipeId
-        // fetch(`http://localhost:3001/recipes`, {
-        //   method:'POST',
-        //  headers: { 
-        //      'Content-type': 'application/json',
-        //      'accept': 'application/json'
-        //  },
-        //  body: JSON.stringify({
-        // cookbook_id: 1,
-        // title: recipe.title,
-        // image: recipe.image 
-        //   })
-        // })
-        // .then(resp => resp.json())
-        // .then(newR => {
-        //     let recipes = [...this.state.userRecipes, newR]
-        //     this.setState({
-        //         userRecipes: recipes 
-        //     })
+          let recipeId = this.props.history.location.state.recipeId
+        fetch(`http://localhost:3001/recipes`, {
+          method:'POST',
+         headers: { 
+             'Content-type': 'application/json',
+             'accept': 'application/json'
+         },
+         body: JSON.stringify({
+        cookbook_id: 1,
+        online_id: recipeId
+        
+          })
+        })
+        .then(resp => resp.json())
+        .then(newR => {
+            // alert recipe has been added to cookbook
+            console.log(newR)
+            })
             
-        // })
-        console.log(this.props.history.location.state.recipeId)
-    }
+        }
 
     render() {
         const getSimilarRecipes = this.state.similarRecipes.map(recipe => 
