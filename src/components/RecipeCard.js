@@ -52,6 +52,7 @@ class RecipeCard extends Component {
     
     render() {
         const {image, title} = this.props.recipe
+        // console.log(this.props.recipe)
             return (
                 <div className="card">
                     <div >
