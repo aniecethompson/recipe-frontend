@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import RecipeCard from './RecipeCard';
-let API_KEY = process.env.REACT_APP_API_KEY_TWO;
+import Buffer from './Buffer'
 
 class CookbookRecipe extends Component {
 
@@ -13,26 +12,17 @@ class CookbookRecipe extends Component {
         fetch(`http://localhost:3001/cookbooks/1`)
         .then(resp => resp.json())
         .then(recipesArray => {
-            recipesArray.recipes.map(recipeInfo => {
-                // console.log(recipe)
-                let onlineId = recipeInfo.online_id
-                return fetch(`https://api.spoonacular.com/recipes/${onlineId}/information?apiKey=${API_KEY}`)
-                .then(resp => resp.json())
-                .then(recipe => {
-                    //   const recipe = [recipeInfo.title, recipeInfo.image]
-                    //    console.log(recipe)
-                        
-                    this.setState(prevState => ({
-                        CookbookRecipes: [...prevState.CookbookRecipes, recipe]
+            return recipesArray.recipes.map(recipeInfo => {
+                    return this.setState(prevState => ({
+                        CookbookRecipes: [...prevState.CookbookRecipes, recipeInfo]
                     }))
-            })
             })
         }
         )
     }
 
     removeRecipe = (recipe) => {
-        console.log(recipe.id)
+        // console.log(recipe.id)
         fetch(`http://localhost:3001/recipes/${recipe.id}`, {
           method:'DELETE',
         })
@@ -51,10 +41,11 @@ class CookbookRecipe extends Component {
 
     
     render() {
-        const renderRecipes = this.state.CookbookRecipes.map(recipe =>{
-             return <RecipeCard key={recipe.id} recipe={recipe}/>
-                // console.log(this.state)
+        const renderRecipes = this.state.CookbookRecipes.map(recipeInfo =>{
+            // console.log(recipeInfo)
+            return <Buffer key={recipeInfo.id} onlineId={recipeInfo.online_id}/>
             })
+ 
         return (
             <div className="random">
                 <h1>CookBook</h1>

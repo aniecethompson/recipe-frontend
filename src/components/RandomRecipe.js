@@ -15,6 +15,7 @@ class RandomRecipe extends Component {
             this.setState({
                 random: resp.recipes
             })
+            // console.log(this.state.random)
          })
     }
             

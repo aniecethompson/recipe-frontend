@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import RecipeCard from './RecipeCard';
-let API_KEY = process.env.REACT_APP_API_KEY_TWO;
+let API_KEY = process.env.REACT_APP_API_KEY_1;
 
 
 class FullRecipe extends Component {
@@ -54,8 +54,9 @@ class FullRecipe extends Component {
         }
 
     render() {
-        const getSimilarRecipes = this.state.similarRecipes.map(recipe => 
-             <RecipeCard key={recipe.id} recipe={recipe}/>)
+        // const getSimilarRecipes = this.state.similarRecipes.map(recipe => 
+        //     <RecipeCard key={recipe.id} recipe={recipe}/>
+        //      )
         const { title, readyInMinutes, servings, image, dishTypes, cuisines, diets, preparationMinutes, cookingMinutes, extendedIngredients, analyzedInstructions} = this.state.recipeInfo
        
             
@@ -90,8 +91,8 @@ class FullRecipe extends Component {
                             <button className="add-btn center" onClick={() => this.handleAddRecipeToCookbook()}>Add To Cookbook</button>
                         </div>
            
-                    {/* <h1>Similar Recipes</h1>
-                    <div className="card-container">
+                    <h1>Similar Recipes</h1>
+                    {/* <div className="card-container">
                     {getSimilarRecipes}
                     </div> */}
 
