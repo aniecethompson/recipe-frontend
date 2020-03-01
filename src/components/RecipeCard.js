@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {withRouter} from "react-router";
-// import { RecipeContextConsumer } from '../context'
 
 class RecipeCard extends Component {
     
@@ -52,7 +51,6 @@ class RecipeCard extends Component {
     
     render() {
         const {image, title} = this.props.recipe
-        console.log(this.props.recipe)
             return (
                 <div className="card">
                     <div >

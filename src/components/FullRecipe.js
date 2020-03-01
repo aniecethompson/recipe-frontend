@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import RecipeCard from './RecipeCard';
-let API_KEY = process.env.REACT_APP_API_KEY_1;
+import Buffer from './Buffer';
+let API_KEY = process.env.REACT_APP_API_KEY_TWO;
 
 
 class FullRecipe extends Component {
@@ -54,11 +54,13 @@ class FullRecipe extends Component {
         }
 
     render() {
-        // const getSimilarRecipes = this.state.similarRecipes.map(recipe => 
-        //     <RecipeCard key={recipe.id} recipe={recipe}/>
-        //      )
+        const getSimilarRecipes = this.state.similarRecipes.map(recipe => {
+            return <Buffer key={recipe.id} onlineId={recipe.id}/>
+            
+
+        })
         const { title, readyInMinutes, servings, image, dishTypes, cuisines, diets, preparationMinutes, cookingMinutes, extendedIngredients, analyzedInstructions} = this.state.recipeInfo
-       
+
             
         return (
             <div>
@@ -92,9 +94,9 @@ class FullRecipe extends Component {
                         </div>
            
                     <h1>Similar Recipes</h1>
-                    {/* <div className="card-container">
+                    <div className="card-container">
                     {getSimilarRecipes}
-                    </div> */}
+                    </div>
 
                     </div>
                     
