@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import RecipeCard from './RecipeCard';
-let API_KEY = process.env.REACT_APP_API_KEY_TWO;
+let API_KEY = process.env.REACT_APP_API_KEY_1;
 
 class Buffer extends Component {
 
@@ -23,7 +23,8 @@ class Buffer extends Component {
 
     render() {
         const showRecipes = this.state.recipes.map(recipe =>{
-            return <RecipeCard key={recipe.id} recipe={recipe}/>
+            // return console.log(recipe.id)
+            return <RecipeCard key={recipe.name} onlineId={recipe.id} recipe={recipe} removeRecipe={this.props.removeRecipe}/>
             })
         return (
             <div>

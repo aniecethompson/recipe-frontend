@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import RecipeCard from './RecipeCard';
-let API_KEY = process.env.REACT_APP_API_KEY_TWO;
+let API_KEY = process.env.REACT_APP_API_KEY_1;
 
 class RandomRecipe extends Component {
 
@@ -26,7 +26,7 @@ class RandomRecipe extends Component {
             <RecipeCard key={recipe.id} recipe={recipe}/>)
         return (
             <div className="random">
-                <button onClick={this.onClick} className= "get-recipes-btn">Random Recipe Generator</button>
+                <button onClick={this.onClick} className= "get-recipes-btn" >Random Recipe Generator</button>
                 <div className="card-container">{getRecipes }</div>
             </div>
         );

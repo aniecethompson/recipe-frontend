@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Buffer from './Buffer';
-let API_KEY = process.env.REACT_APP_API_KEY_TWO;
+let API_KEY = process.env.REACT_APP_API_KEY_1;
 
 
 class FullRecipe extends Component {
@@ -57,7 +57,7 @@ class FullRecipe extends Component {
         const getSimilarRecipes = this.state.similarRecipes.map(recipe => {
             return <Buffer key={recipe.id} onlineId={recipe.id}/>
             
-
+            // return console.log(recipe)
         })
         const { title, readyInMinutes, servings, image, dishTypes, cuisines, diets, preparationMinutes, cookingMinutes, extendedIngredients, analyzedInstructions} = this.state.recipeInfo
 

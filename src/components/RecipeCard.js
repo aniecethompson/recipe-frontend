@@ -47,10 +47,27 @@ class RecipeCard extends Component {
             
     //     })
     // }
+
+    
+
+    // showButtons() {
+    //     if(this.props.onlineId){
+    //        return(
+    //             <div>
+    //              <button className="add-btn center" onClick={this.onClick}>View Recipe</button>
+    //              <button className="add-btn center" onClick={this.props.removeRecipe}>Delete Recipe</button>
+    //              </div>
+    //        )} else {
+    //            return(
+    //                <button className="add-btn center" onClick={this.onClick}>View Recipe</button>
+    //            )
+    //     }
+    // } 
     
     
     render() {
-        const {image, title} = this.props.recipe
+        const {image, title, id} = this.props.recipe
+        // console.log(this.props.onlineId)
             return (
                 <div className="card">
                     <div >
@@ -58,7 +75,8 @@ class RecipeCard extends Component {
                         <div className= "container">
                             <h2>{title}</h2>
                         </div>
-                    </div>
+                        </div>
+                        {this.showButtons(id)}
                     <button className="add-btn center" onClick={this.onClick}>View Recipe</button>
                 </div>
         );
