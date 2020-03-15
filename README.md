@@ -1,5 +1,6 @@
 # Plan It!
-A recipe searching application that allows users to search for recipe by ingredient or recieve inspiration from the random recipe generator. Users can then view the full recipe and have the option of saving recipes to their cookbook for later use. Recipe information is provided by Spoonacular API. Thank you for visiting!
+
+A recipe searching application that allows users to search for a recipe by ingredient or receive inspiration from the random recipe generator. Users can then view the full recipe and have the option of saving recipes to their cookbook for later use. Recipe information is provided by Spoonacular API. 
 
 Want to check out how the application works? Video demo available here: https://www.youtube.com/watch?v=UWyEuIQ1itU
 
