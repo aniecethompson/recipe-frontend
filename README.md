@@ -37,3 +37,5 @@ npm start
 Pull requests are more than welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 This project does not have any tests.
+
+<!-- Happy Saturday -->
