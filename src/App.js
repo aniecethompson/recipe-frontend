@@ -24,3 +24,7 @@ class App extends Component {
 }}
 
 export default App;
+
+
+
+// TODO: 1. Remember how app works, 2. add hooks to all files, 3. ensure all functionality you want is working , 4. add unit tests, 5. deploy (ci/cd with github maybe)
