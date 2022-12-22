@@ -1,76 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import RecipeCard from './RecipeCard';
+import React, { useState } from "react";
+import Buffer from "./Buffer";
 let API_KEY = process.env.REACT_APP_API_KEY_1;
 
-// class RandomRecipe extends Component {
+function RandomRecipe() {
+  const [random, setRandom] = useState([]);
 
-//     state ={
-//         random: []
-//     }
+  const showRecipes = random.map((recipe) => {
+    return <Buffer key={recipe.name} onlineId={recipe.id} recipe={recipe} />;
+  });
 
-//     onClick = () =>{
-//         // console.log(API_KEY)
-//         fetch(`https://api.spoonacular.com/recipes/random?number=21&apiKey=${API_KEY}`)
-//         .then(resp => resp.json())
-//         .then((resp) => {
-//             this.setState({
-//                 random: resp.recipes
-//             })
-//             // console.log(this.state.random)
-//          })
-//     }
-            
-        
-//     render() {
-//         // console.log(this.state.random)
-//         const getRecipes = this.state.random.map(recipe => 
-//             <RecipeCard key={recipe.id} recipe={recipe}/>)
-//         return (
-//             <div className="random">
-//                 <button onClick={this.onClick} className= "get-recipes-btn" >Random Recipe Generator</button>
-//                 <div className="card-container">{getRecipes }</div>
-//             </div>
-//         );
-//     }
-// }
+  const onClick = () => {
+    fetch(
+      `https://api.spoonacular.com/recipes/random?number=21&apiKey=${API_KEY}`
+    )
+      .then((resp) => resp.json())
+      .then((randomRecipe) => setRandom(randomRecipe.recipes));
+  };
 
-function RandomRecipe(){
-    
-    const [random, setRandom] = useState([])
-    
-    // const getRecipes = () => {
-
-    //   random.forEach((item) => { 
-        
-    //     return <RecipeCard key={item.id} recipe={item}/>
-    //   })
-    // }
-  
-    const onClick = () =>{
-        
-        fetch(`https://api.spoonacular.com/recipes/random?number=21&apiKey=${API_KEY}`)
-        .then(resp => resp.json())
-        .then((resp) => setRandom(resp.recipe)
-            // resp.recipes.forEach((recipe) =>{
-            //     return <RecipeCard key={recipe.id} recipe={recipe}/>
-            )
-            
-            
-            // random.map((item) => { 
-            //      return <RecipeCard key={item.id} recipe={item}/>
-            //   })
-        
-    }
-   
-    
-    return (
+  return (
     <div className="random">
-        <button onClick={onClick} className= "get-recipes-btn" >Random Recipe Generator</button>
-        <div className="card-container">{random.map((item) => console.log(item))}</div>
-        {/* <RecipeCard key={item.id} recipe={item}/> */}
+      <button onClick={onClick} className="get-recipes-btn">
+        Random Recipe Generator
+      </button>
+      <div className="card-container">{showRecipes}</div>
     </div>
-    );
+  );
 }
-
 
 export default RandomRecipe;

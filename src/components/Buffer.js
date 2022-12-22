@@ -3,6 +3,7 @@ import RecipeCard from "./RecipeCard";
 let API_KEY = process.env.REACT_APP_API_KEY_1;
 
 function Buffer(props) {
+  console.log("props from buffer", props);
   const [recipes, setRecipes] = useState([]);
   useEffect(() => {
     let onlineId = props.onlineId;
@@ -14,6 +15,7 @@ function Buffer(props) {
     // eslint-disable-next-line
   }, []);
 
+  console.log("recipes", recipes);
   const showRecipes = recipes.map((recipe) => {
     return (
       <RecipeCard key={recipe.name} onlineId={recipe.id} recipe={recipe} />

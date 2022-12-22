@@ -5,36 +5,6 @@ import { useLocation } from "react-router-dom";
 
 let API_KEY = process.env.REACT_APP_API_KEY_1;
 
-// class FullRecipe extends Component {
-
-//     state ={
-//         recipeInfo: {dishTypes: [], cuisines: [], diets: [] ,extendedIngredients: [], analyzedInstructions: [] },
-//         similarRecipes: [],
-//         recipes: []
-//     }
-
-//        handleAddRecipeToCookbook = () => {
-//           let recipeId = this.props.recipeId
-//         fetch(`http://localhost:3001/recipes`, {
-//           method:'POST',
-//          headers: {
-//              'Content-type': 'application/json',
-//              'accept': 'application/json'
-//          },
-//          body: JSON.stringify({
-//         cookbook_id: 1,
-//         online_id: recipeId
-
-//           })
-//         })
-//         .then(resp => resp.json())
-//         .then(newR => {
-//             // alert recipe has been added to cookbook
-//             console.log(newR)
-//             })
-
-//         }
-
 function FullRecipe() {
   const location = useLocation();
   const { recipeId } = location.state;
@@ -166,3 +136,4 @@ function FullRecipe() {
   );
 }
 export default withRouter(FullRecipe);
+// add handleAddRecipeToCookbook function and button
